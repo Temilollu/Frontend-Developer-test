@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
 import ArtCollection from "../components/Home/ArtCollection/ArtCollection";
 import HeroSection from "../components/Home/HeroSection/HeroSection";
@@ -28,17 +28,17 @@ const Home = () => {
     }
   );
 
-  const debounce = (func) => {
-    let timer;
-    return function (...args) {
-      const context = this;
-      if (timer) clearTimeout(timer);
-      timer = setTimeout(() => {
-        timer = null;
-        func.apply(context, args);
-      }, 500);
-    };
-  };
+  // const debounce = (func) => {
+  //   let timer;
+  //   return function (...args) {
+  //     const context = this;
+  //     if (timer) clearTimeout(timer);
+  //     timer = setTimeout(() => {
+  //       timer = null;
+  //       func.apply(context, args);
+  //     }, 500);
+  //   };
+  // };
 
   const handleChange = (e) => {
     setSearch(e.target.value);
@@ -52,7 +52,7 @@ const Home = () => {
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const optimizedVersion = useCallback(debounce(handleChange), []);
+  // const optimizedVersion = useCallback(debounce(handleChange), []);
 
   return (
     <div>

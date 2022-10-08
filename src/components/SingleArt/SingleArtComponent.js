@@ -7,7 +7,6 @@ import moreIcon from "../../assets/images/moreVertIcon.svg";
 import arrow from "../../assets/images/longerBackIcon.svg";
 import lines from "../../assets/images/abu.svg";
 
-import frame from "../../assets/images/Frame 11.svg";
 import Button from "../Button/Button";
 import { useNavigate, useParams } from "react-router-dom";
 import LoadingSpinner from "../Spinner/LoadingSpinner";
