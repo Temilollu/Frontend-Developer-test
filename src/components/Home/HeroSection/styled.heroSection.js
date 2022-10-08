@@ -8,7 +8,6 @@ padding : 21px 0 21px 48px ;
 margin-top : 90px;
 
 .content{
-    // flex : 1;
   h1{
     font-weight: 700;
     font-size: 68px;
@@ -35,7 +34,25 @@ margin-top : 90px;
     margin-right: 11%;
   }
 }
-.img-container{
 
+
+@media(max-width : 768px){
+  flex-direction: column;
+  gap : 60px;
+  padding : 21px;
+  margin-top : 30px;
+  .content{
+    h1{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 133.4%;
+    }
+  }
+  .img-container{
+  width : 100%;
+    img{
+      width : 100%;
+    }
+  }
 }
 `;

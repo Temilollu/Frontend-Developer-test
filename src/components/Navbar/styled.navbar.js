@@ -27,4 +27,47 @@ ul{
         cursor: pointer;
         }
 }
+  .logo-heading-mobile{
+       display: none;
+  }
+@media(max-width : 768px){
+    padding : 21px 21px;
+    .logo{
+        display: none;
+    }
+    .logo-heading-mobile{
+        display: flex;
+        justify-content: space-between;
+        align-items : center;
+        width: 100%;
+    }
+    .ham{
+         width: 30px;
+        height: 30px;
+    }
+    .close{
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+    }
+    .links{
+        display: none;
+    }
+    .links-mobile{
+        position: absolute;
+        padding: 32px;
+        top: 0px;
+        left: 0px;
+        background: #110c00;
+        min-height: 480px;
+        width: 100%;
+        z-index: 30;
+        height: 100vh;
+    }
+    ul{
+        flex-direction : column;
+        justify-content: normal;
+        align-items : flex-start;
+    }
+}
 `;

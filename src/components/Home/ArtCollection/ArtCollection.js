@@ -5,8 +5,16 @@ import arrow from "../../../assets/images/Arrow.svg";
 import CollectionCard from "./CollectionCard";
 import { ArtCollectionStyles } from "./styled.artcollection";
 import Button from "../../Button/Button";
+import LoadingSpinner from "../../Spinner/LoadingSpinner";
 
-const ArtCollection = ({ data }) => {
+const ArtCollection = ({
+  data,
+  search,
+  isLoading,
+  handleChange,
+  handleNext,
+  page,
+}) => {
   return (
     <ArtCollectionStyles>
       <div className="main_padding">
@@ -21,19 +29,31 @@ const ArtCollection = ({ data }) => {
           </div>
           <div className="input">
             <img src={searchIcon} alt="" />
-            <input placeholder="Search" />
+            <input
+              placeholder="Search"
+              value={search}
+              onChange={handleChange}
+            />
           </div>
         </div>
 
-        <div className="collections">
-          {data.map((collection) => (
-            <CollectionCard key={collection.id} collection={collection} />
-          ))}
-        </div>
+        {isLoading && page === 1 ? (
+          <LoadingSpinner />
+        ) : (
+          <div className="collections">
+            {data.map((collection) => (
+              <CollectionCard key={collection.id} collection={collection} />
+            ))}
+          </div>
+        )}
       </div>
+
+      {isLoading && page > 1 && (
+        <div className="loading">Loading more arts...</div>
+      )}
       <div className="footer">
-        <img src={line} alt="" />
-        <Button inverted width="200px">
+        <img src={line} alt="" className="footer-line" />
+        <Button inverted width="200px" handleClick={handleNext}>
           Explore more <img src={arrow} alt="" className="arrow" />{" "}
         </Button>
       </div>

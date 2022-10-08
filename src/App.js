@@ -6,9 +6,15 @@ import Home from "./Pages/Home";
 import SingleArt from "./Pages/SingleArt";
 
 function App() {
-  const queryClient = new QueryClient();
+  const client = new QueryClient({
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: false,
+      },
+    },
+  });
   return (
-    <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={client}>
       <Router>
         <Navbar />
         <Routes>

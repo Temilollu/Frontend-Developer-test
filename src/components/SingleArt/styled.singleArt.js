@@ -8,6 +8,9 @@ export const SingleArtStyles = styledComponents.div`
     align-items: center;
     width : 100%;
     margin-top : 80px;
+    .arrow{
+        cursor: pointer;
+    }
 }
 
 .content{
@@ -18,7 +21,10 @@ export const SingleArtStyles = styledComponents.div`
     gap : 54px;
     .frame{
         flex: 0.7;
+        width: 465px;
         margin-left : 72px;
+        height: 617px;
+        border-radius: 200px 20px;
     }
     .more{
         flex : 1;
@@ -54,6 +60,36 @@ export const SingleArtStyles = styledComponents.div`
 
     img{
         margin-right: -48px;
+    }
+}
+
+@media(max-width : 768px){
+    padding : 0 21px;
+    .icons{
+          margin-top : 40px;
+    }
+    .content{
+        flex-direction : column-reverse;
+        .more{
+            h2{
+            font-weight: 800;
+            font-size: 32px;
+            line-height: 133.4%;
+        }
+        }
+        .frame{
+            width: 100%;
+            margin-left: 0;
+            flex: auto;
+        }
+    }
+    .cta{
+     
+        img{
+       
+            display: none;
+           
+        }
     }
 }
 `;

@@ -40,12 +40,14 @@ input{
     height: 66px;
     width: 537px;
     border : none;
+      color: #FBAF00;
+    padding-left : 63px;
 &::placeholder {
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;
     color: #FBAF00;
-    padding-left : 63px;
+    // padding-left : 63px;
 }
 }
 
@@ -68,5 +70,48 @@ input{
     .arrow{
      margin-left: 10px;
     }
+}
+
+@media(max-width : 768px){
+    div.flex__center{
+        flex-direction : column;
+    }
+    .heading {
+        h2{
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 133.4%;
+        }
+        p{
+            margin  : 20px 0px;
+        }
+    }
+    .input{
+        width: 80%;
+        margin-bottom : 40px;
+    }
+    input{
+        width : 100%;
+    }
+    .collections{
+
+    & > * {
+        width : 100%;
+        margin-bottom : 36px;
+       
+    }
+  }
+    .footer{
+     flex-direction : column-reverse;
+    
+     .footer-line{
+        width: 100%;
+     }
+     
+    .arrow{
+        margin-left: 10px;
+    }
+}
+
 }
 `;

@@ -1,13 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styledComponents from "styled-components";
-import imgOne from "../../../assets/images/img2.svg";
 
 const CollectionCard = ({ collection }) => {
   const navigate = useNavigate();
   return (
     <CollectionCard.Wrapper onClick={() => navigate(`/art/${collection?.id}`)}>
-      <img src={collection?.thumbnail?.lqip} alt="" />
+      <img
+        src={collection?.thumbnail?.lqip}
+        alt={collection?.thumbnail?.alt_text}
+      />
       <div className="bottom">
         <h3 className="title">{collection?.title}</h3>
         <div className="date">{collection?.date_display}</div>
@@ -22,7 +24,7 @@ export default CollectionCard;
 CollectionCard.Wrapper = styledComponents.div`
 
 img{
-width : 437px;
+width: 100%;
 height: 326px;
 border-radius: 180px 0px  0px 0px;
 }
