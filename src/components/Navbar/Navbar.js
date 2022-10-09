@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import hamburger from "../../assets/images/hamburgerr.svg";
-import close from "../../assets/images/close.png";
+import close from "../../assets/images/close.svg";
 import { NavbarStyles } from "./styled.navbar";
 
 import logo from "../../assets/images/logo.svg";

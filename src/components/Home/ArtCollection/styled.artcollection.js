@@ -5,6 +5,9 @@ div.flex__center{
     align-items : flex-start;
     justify-content: space-between; 
 }
+.heading-container{
+    margin-top: 89px 
+}
 .heading{
     h2{
         font-weight: 700;

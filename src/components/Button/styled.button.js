@@ -21,7 +21,7 @@ export const ButtonWrapper = styledComponents.div`
     border-radius: 0px 30px;
 
     border-radius: 0px 30px;
-    transform: translateY(-5px) translateX(-4px);
+    transform: translateY(-5px) translateX(-5px);
   }
 
 `;

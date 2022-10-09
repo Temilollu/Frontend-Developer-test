@@ -1,11 +1,13 @@
 import React from "react";
-import searchIcon from "../../../assets/images/search.svg";
+
 import line from "../../../assets/images/line.svg";
 import arrow from "../../../assets/images/Arrow.svg";
-import CollectionCard from "./CollectionCard";
+
 import { ArtCollectionStyles } from "./styled.artcollection";
 import Button from "../../Button/Button";
 import LoadingSpinner from "../../Spinner/LoadingSpinner";
+import SearchBox from "../SearchBox/SearchBox";
+import CollectionContainer from "../CollectionContainer/CollectionContainer";
 
 const ArtCollection = ({
   data,
@@ -18,7 +20,7 @@ const ArtCollection = ({
   return (
     <ArtCollectionStyles>
       <div className="main_padding">
-        <div className="flex__center">
+        <div className="flex__center heading-container">
           <div className="heading">
             <h2>Art in the collection</h2>
             <p>
@@ -27,24 +29,12 @@ const ArtCollection = ({
               <br /> more
             </p>
           </div>
-          <div className="input">
-            <img src={searchIcon} alt="" />
-            <input
-              placeholder="Search"
-              value={search}
-              onChange={handleChange}
-            />
-          </div>
+          <SearchBox handleChange={handleChange} search={search} />
         </div>
-
         {isLoading && page === 1 ? (
-          <LoadingSpinner />
+          <LoadingSpinner height="20vh" />
         ) : (
-          <div className="collections">
-            {data.map((collection) => (
-              <CollectionCard key={collection.id} collection={collection} />
-            ))}
-          </div>
+          <CollectionContainer data={data} />
         )}
       </div>
 

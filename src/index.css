@@ -9,6 +9,10 @@ body {
   padding: 21px 33px;
 }
 
+.empty {
+  text-align: center;
+}
+
 .flex__center {
   display: flex;
   justify-content: center;

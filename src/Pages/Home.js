@@ -24,25 +24,13 @@ const Home = () => {
       onSuccess: (res) => {
         setData((prev) => [...prev, ...res?.data]);
       },
-      keepPreviousData: true,
     }
   );
-
-  // const debounce = (func) => {
-  //   let timer;
-  //   return function (...args) {
-  //     const context = this;
-  //     if (timer) clearTimeout(timer);
-  //     timer = setTimeout(() => {
-  //       timer = null;
-  //       func.apply(context, args);
-  //     }, 500);
-  //   };
-  // };
 
   const handleChange = (e) => {
     setSearch(e.target.value);
     setData([]);
+    setPage(1);
   };
 
   const handleNext = () => {
@@ -50,9 +38,6 @@ const Home = () => {
       setPage((prev) => prev + 1);
     }
   };
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  // const optimizedVersion = useCallback(debounce(handleChange), []);
 
   return (
     <div>
@@ -64,6 +49,7 @@ const Home = () => {
         isLoading={isLoading}
         handleChange={handleChange}
         handleNext={handleNext}
+        page={page}
       />
     </div>
   );

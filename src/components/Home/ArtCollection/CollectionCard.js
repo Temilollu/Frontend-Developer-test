@@ -11,7 +11,9 @@ const CollectionCard = ({ collection }) => {
         alt={collection?.thumbnail?.alt_text}
       />
       <div className="bottom">
-        <h3 className="title">{collection?.title}</h3>
+        <h3 className="title" data-testid="collection-title">
+          {collection?.title}
+        </h3>
         <div className="date">{collection?.date_display}</div>
         <div className="location">{collection?.place_of_origin}</div>
       </div>

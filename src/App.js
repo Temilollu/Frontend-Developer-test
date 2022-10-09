@@ -20,7 +20,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/art/:id" element={<SingleArt />} />
-          <Route path="*">Page not found</Route>
         </Routes>
       </Router>
     </QueryClientProvider>

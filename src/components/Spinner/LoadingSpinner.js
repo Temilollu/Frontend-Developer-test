@@ -1,9 +1,9 @@
 import React from "react";
 import styledComponents from "styled-components";
 
-const LoadingSpinner = () => {
+const LoadingSpinner = ({ height }) => {
   return (
-    <LoadingSpinner.Wrapper>
+    <LoadingSpinner.Wrapper height={height}>
       <div className="lds-roller">
         <div></div>
         <div></div>
@@ -21,7 +21,7 @@ const LoadingSpinner = () => {
 export default LoadingSpinner;
 
 LoadingSpinner.Wrapper = styledComponents.div`
-height : 80vh;
+height : ${({ height }) => (height ? height : "80vh")};
 display: flex; 
 justify-content: center;
 align-items: center;
