@@ -40,7 +40,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <>
       <HeroSection />
 
       <ArtCollection
@@ -51,7 +51,7 @@ const Home = () => {
         handleNext={handleNext}
         page={page}
       />
-    </div>
+    </>
   );
 };
 
